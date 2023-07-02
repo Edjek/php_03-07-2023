@@ -50,11 +50,11 @@ Objectif du cours : Le cours vise à fournir les connaissances et les compétenc
 
 ## Jour 5:
 
-    - Approfondir la gestion des erreurs et des exceptions en PHP pour gérer les erreurs et les exceptions de manière appropriée.
-    - Utiliser des bibliothèques et des frameworks PHP populaires pour accélérer le développement web, tels que Laravel, Symfony, etc.
-    - Explorer d'autres fonctionnalités avancées de PHP, telles que la manipulation des fichiers, la manipulation d'images, la génération de PDF, etc.
-    - Comprendre les bonnes pratiques de sécurité en PHP, y compris le filtrage des entrées utilisateur, la protection contre les attaques de validation, etc.
-    - Réaliser des projets pratiques pour appliquer les connaissances acquises tout au long du cours et renforcer les compétences en développement web avec PHP.
-    - Réaliser des projets pratiques pour appliquer les connaissances acquises tout au long du cours et renforcer les compétences en développement web avec PHP.
+- Approfondir la gestion des erreurs et des exceptions en PHP pour gérer les erreurs et les exceptions de manière appropriée.
+- Utiliser des bibliothèques et des frameworks PHP populaires pour accélérer le développement web, tels que Laravel, Symfony, etc.
+- Explorer d'autres fonctionnalités avancées de PHP, telles que la manipulation des fichiers, la manipulation d'images, la génération de PDF, etc.
+- Comprendre les bonnes pratiques de sécurité en PHP, y compris le filtrage des entrées utilisateur, la protection contre les attaques de validation, etc.
+- Réaliser des projets pratiques pour appliquer les connaissances acquises tout au long du cours et renforcer les compétences en développement web avec PHP.
+- Réaliser des projets pratiques pour appliquer les connaissances acquises tout au long du cours et renforcer les compétences en développement web avec PHP.
 
 _Ces objectifs peuvent être adaptés en fonction des besoins spécifiques du groupe de personnes débutantes en formation au développement web._
