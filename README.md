@@ -32,7 +32,7 @@ Objectif du cours : Le cours vise à fournir les connaissances et les compétenc
 -   Explorer les fonctions prédéfinies en PHP pour effectuer des opérations courantes telles que la manipulation de chaînes, le traitement de tableaux, etc.
 -   Comprendre et mettre en œuvre les sessions en PHP pour gérer l'état de l'utilisateur entre les requêtes.
 -   Travailler avec les cookies en PHP pour stocker des informations sur le navigateur de l'utilisateur.
--   Utiliser les superglobales en PHP (comme $\_GET, $\_POST, $\_SERVER) pour accéder aux données fournies par le navigateur ou le serveur.
+-   Utiliser les superglobales en PHP (comme $_GET, $_POST, $_SERVER) pour accéder aux données fournies par le navigateur ou le serveur.
 
 ## Jour 3:
 

@@ -11,7 +11,7 @@
     <h1>Découverte de PHP</h1>
     <?php
     // Pour ouvrir un bloc PHP, on utilise la balise <?php
-    //  Pour fermer un bloc PHP on utilise la balise suivante : 
+    // Pour fermer un bloc PHP on utilise la balise suivante : 
     ?>
 
     <p>Je suis du HTML</p>
@@ -31,8 +31,9 @@
     echo '<h2>Affichage</h2>';
     // ----------------------------
     echo 'Hello, world !';
-    echo "Hello, World !";
+    print "Hello, World !";
     //  echo est une instruction qui permet d'afficher du texte dans le navigateur
+    //  print équivalent à echo
 
     // ----------------------------
     echo '<h2>Les variables</h2>';
@@ -223,7 +224,7 @@
     echo 'Bonjour, je m\'appelle ' . $user['prenom'] . ' ' . $user['nom'] . ', j\'ai ' . $user['age'] . 'ans et mon numéro de téléphone est le : ' . $user['telephone'];
 
     // ----------------------------
-    echo '<h3>Les structures itératives : les boucles</h3>';
+    echo '<h2>Les structures itératives : les boucles</h2>';
     // ----------------------------
 
     // Boucle while :
@@ -256,13 +257,12 @@
     </select>
     <?php
     // Boucle for() :
-    for ($i = 0; $i < 10; $i++) {
-        echo '<p>salut tout le monde !</p>';
+    for ($i = 0; $i < 4; $i++) {
+        echo "<p>J'ai fait $i tours </p>";
     }
 
     // Exercice : à l'aide d'une boucle while, afficher un sélecteur avec les années depuis 1920 jusqu'à 2020.
-
-
+    // Exercice : faire le même exercice avec la boucle for
     ?>
     <select name="" id="">
         <?php
