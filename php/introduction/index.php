@@ -40,7 +40,7 @@
     // ----------------------------
     // Déclaration d'une variable avec le signe $
     $unNom;
-    // Affectation de la valeur 127 à la variable nommée unNOm
+    // Affectation de la valeur 127 à la variable nommée $unNOm
     $unNom = 127;
     echo $unNom;
     echo '<br>';
@@ -73,9 +73,9 @@
     echo '<h2>Les constantes et les constantes magiques</h2>';
     // ----------------------------
 
-    // Une constante permet de sauvegarder une valeur sauf que celle ci ne peut pas être modifiée
-    // Utile pour conserver les parametre de la base de donnée
-    // Par convention, une constante  se déclare toujours en majuscule
+    // Une constante permet de sauvegarder une valeur sauf que celle-ci ne peut pas être modifiée
+    // Utile pour conserver les parametres de la base de donnée
+    // Par convention, une constante se déclare toujours en majuscule
     define("CAPITAL", "Paris");
 
     echo CAPITAL;
@@ -84,8 +84,8 @@
     echo __LINE__ . '<br>'; // Affiche le numéro de la ligne courante
     echo __DIR__ . '<br>'; // Affiche le dossier dans lequel est le fichier courant
 
-    // Déclare  3 variables bleu, blanc, rouge 
-    // Afficher Bleu-Blanc-Rouge (avec les tirets) en mettant le texte de chaque couleur dans des variables.
+    // Déclarer 3 variables contenant : bleu, blanc, rouge 
+    // Afficher bleu-blanc-rouge (avec les tirets) en mettant le texte de chaque couleur dans des variables.
     $blue = 'Bleu';
     $white = 'Blanc';
     $red = 'Rouge';
@@ -153,7 +153,7 @@
             echo 'vous aimez le vert <br>';
             break;
         default:
-            echo ' vous n \'aimez ni le bleu, ni le rouge, ni le vert <br>';
+            echo 'vous n \'aimez ni le bleu, ni le rouge, ni le vert <br>';
     }
 
     $animal = 'chat';
@@ -282,8 +282,127 @@
         ?>
     </select>
     <?php
-    
+
+    $animals = ['lion', 'tigre', 'girafe', 'buffle', 'boa'];
+
+    // Boucle for()
+    for ($i = 0; $i < count($animals); $i++) {
+        echo $animals[$i] . '<br>';
+    }
     // Boucle foreach()
+    // ---------------------
+    echo '<h3>la boucle foreach()</h3>';
+    // ---------------------
+    foreach ($animals as $animal) {
+        echo $animal . '<br>';
+    }
+
+    $voiture = ['couleur' => 'jaune', 'modele' => 'bmw', 'annee' => 2018];
+    foreach ($voiture as $key => $prop) {
+        echo $key . ' : ' . $prop . '<br>';
+    }
+
+    // ---------------------
+    echo '<h2>Fonctions prédéfinies</h2>';
+    // ---------------------
+
+    // substr()
+    // Extrait un bout de la chaine de caractère
+    echo substr('Bonjour, je m\'appelle Rachid. Je suis formateur', 0, 15);
+    // declarez une variable description (extrait)
+    // extraire 100 premier caractere suivi ...
+    $description = "Indiana Jones reçoit la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indiana par le passé : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles.";
+    $newdesc = substr($description, 0, 100);
+    echo $newdesc . '... <br>';
+
+    // trim()
+    // Supprime les espaces au début et à la fin de la chaine de caractère 
+    $message = '   edjek@gmail.com   ';
+    echo trim($message);
+
+    // ---------------------
+    echo '<h2>Les fonctions utilisateurs</h2>';
+    // ---------------------
+
+    //  On déclare une fonction avec le mot clé function suivi du la fonction puis d'une paire de ()
+    function separation()
+    {
+        echo '<br>';
+    }
+
+    // Pour executer une fonction, on l'appelle par son nom suivi d'une paire de ()
+    separation();
+
+    // Fonction avec parametre et return
+    function bonjour($name)
+    {
+        return "Bonjour, je m'appelle $name";
+    }
+
+    $name = 'Rachid';
+    $res = bonjour($name);
+    echo $res;
+
+    // Exercice : écrire une fonction factureEssence() qui calcule le coût total de votre facture en fonction du nombre de litres d'essence que vous indiquez lors de l'appel de la fonction.
+    // Le prix du litre est 1.9
+    // Cette fonction retourne la phrase "Votre facture est de X euros pour Y litres d'essence." où X et Y sont des variables.
+    //  Afficher le resultat de la fonction
+    function factureEssence($litres, $prixEssence)
+    {
+        $res = $litres * $prixEssence;
+        return "Votre facture est de $res euros pour $litres litres d'essence.";
+    }
+
+    separation();
+    echo factureEssence(15, 1.4);
+
+    // ---------------------
+    echo '<h2>Les super globales</h2>';
+    // ---------------------
+    // Les superglobales sont des variables de type ARRAY (tableau associatif) qui sont disponibles dans tous les contextes du script.
+
+    function debbug($var){
+        echo '<pre>';
+        var_dump($var);
+        echo '</pre>';
+    }
+
+    // $_SERVER contient des informations liées au serveur
+    echo '</pre>';
+    debbug($_SERVER);
+    echo $_SERVER['MYSQL_HOME'];
+
+    // Afficher a chaque fois dans un paragraphe
+    // Adresse IP du server : 
+    // Nom du fichier executé : 
+    // Chemin du fichier exécuté : 
+    separation();
+    echo "Adresse IP du server : " . $_SERVER['SERVER_NAME'];
+    separation();
+    echo "Nom du fichier executé : " . $_SERVER['SCRIPT_NAME'];
+    separation();
+    echo "Chemin du fichier executé : " . $_SERVER['SCRIPT_FILENAME'];
+
+    // $_GET :
+    var_dump($_GET); // $_GET contient les informations envoyéees en paramètre dans l'URL
+
+    // ---------------------
+    echo '<h2>Les inclusions de fichier</h2>';
+    // ---------------------
+    // En PHP, il est possible d'inclure des fichiers dans d'autres fichiers avec l'instruction require, include, include_once ou encore require_once (on utilise plutôt require_once en pratique).
+
+    // require 'inclus.php'; // Le fichier est obligatoire pour le fonctionnement du site. Si le fichier n'est pas trouvé, require génère une erreur fatale et stoppe l'exécution du code.
+    // include 'inclus.php'; // Le fichier est facultatif pour le fonctionnement du site. Si le fichier n'est pas trouvé, include génère une erreur de type warning et poursuit l'exécution du code.
+
+    include './include.inc.php';
+    require './include.inc.php';
+
+    // Le _once permet de vérifier si le fichier a déjà été inclus. Si c'est le cas, il ne le ré-inclut pas.
+    include_once './inclue.inc.php';
+    require_once './include.inc.php';
+    echo $doranco;
+
+    echo 'Je suis un message';
     ?>
 
 </body>
