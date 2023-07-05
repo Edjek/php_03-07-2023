@@ -125,7 +125,7 @@
     $a %= 2;
     echo $a . '<br>';
 
-    
+
     /* --------------------------------- */
     echo '<h2>Les structures conditionnelles (if / elseif/ else</h2>';
     /* --------------------------------- */
@@ -335,7 +335,7 @@
 
 
     /* --------------------------------- */
-    echo '<h3>Les fonctions</h3>';
+    echo '<h2>Les fonctions</h2>';
     /* --------------------------------- */
 
     /* --------------------------------- */
@@ -419,7 +419,7 @@
 
 
     /* --------------------------------- */
-    echo '<h3>GET</h3>';
+    echo '<h3>$_GET[]</h3>';
     /* --------------------------------- */
 
     // $_GET :
@@ -427,7 +427,7 @@
 
 
     /* --------------------------------- */
-    echo '<h3>POST</h3>';
+    echo '<h3>$_POST[]</h3>';
     /* --------------------------------- */
 
     // $_POST
@@ -435,7 +435,7 @@
 
 
     /* --------------------------------- */
-    echo '<h3>Les sessions</h3>';
+    echo '<h3>$_SESSION[]</h3>';
     /* --------------------------------- */
 
     // Une session permet de conserver des informations à travers le site. Ces informations sont stockées dans un fichier temporaire sur le serveur. Ce fichier est relié à un internaute grâce à un identifiant unique : le session_id. Ce fichier peut contenir des informations sensibles : il ne faut donc pas le laisser à la portée de tout le monde. C'est pour cela qu'il est stocké dans un dossier temporaire du serveur, inaccessible aux internautes.
