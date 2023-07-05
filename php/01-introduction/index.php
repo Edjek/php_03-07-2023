@@ -17,9 +17,10 @@
     <p>Je suis du HTML</p>
 
     <?php
-    // ----------------------------
+    /* --------------------------------- */
     echo '<h2>Les commentaires</h2>';
-    // ----------------------------
+    /* --------------------------------- */
+
     // Je suis un commentaire en PHP
     # Je suis aussi un commentaire en PHP
     /* 
@@ -27,20 +28,24 @@
         sur plusieurs lignes
     */
 
-    // ----------------------------
-    echo '<h2>Affichage</h2>';
-    // ----------------------------
-    echo 'Hello, world !';
-    print "Hello, World !";
-    //  echo est une instruction qui permet d'afficher du texte dans le navigateur
-    //  print équivalent à echo
 
-    // ----------------------------
+    /* --------------------------------- */
+    echo '<h2>Affichage</h2>';
+    /* --------------------------------- */
+
+    //  echo est une instruction qui permet d'afficher du texte dans le navigateur
+    echo 'Hello, world !';
+    //  print est équivalent à echo
+    print "Hello, World !";
+
+
+    /* --------------------------------- */
     echo '<h2>Les variables</h2>';
-    // ----------------------------
+    /* --------------------------------- */
+
     // Déclaration d'une variable avec le signe $
     $unNom;
-    // Affectation de la valeur 127 à la variable nommée $unNOm
+    // Affectation d'une valeur à la variable
     $unNom = 127;
     echo $unNom;
     echo '<br>';
@@ -55,9 +60,11 @@
     $unBooleen = true;
     echo gettype($unBooleen);
 
-    // ----------------------------
+
+    /* --------------------------------- */
     echo '<h2>La concaténation</h2>';
-    // ----------------------------
+    /* --------------------------------- */
+
     $a = 'Bonjour';
     $b = 'tout le monde';
     // Entre guillemets simple les variables ne sont pas évaluées : c'est leur nom littéral qui est affiché
@@ -69,21 +76,6 @@
     echo '<br>';
     echo '$a $b, je suis un message en PHP';
 
-    // ----------------------------
-    echo '<h2>Les constantes et les constantes magiques</h2>';
-    // ----------------------------
-
-    // Une constante permet de sauvegarder une valeur sauf que celle-ci ne peut pas être modifiée
-    // Utile pour conserver les parametres de la base de donnée
-    // Par convention, une constante se déclare toujours en majuscule
-    define("CAPITAL", "Paris");
-
-    echo CAPITAL;
-    echo '<br>';
-    echo __FILE__ . '<br>'; // Affiche le chemin complet vers le fichier courant
-    echo __LINE__ . '<br>'; // Affiche le numéro de la ligne courante
-    echo __DIR__ . '<br>'; // Affiche le dossier dans lequel est le fichier courant
-
     // Déclarer 3 variables contenant : bleu, blanc, rouge 
     // Afficher bleu-blanc-rouge (avec les tirets) en mettant le texte de chaque couleur dans des variables.
     $blue = 'Bleu';
@@ -94,9 +86,27 @@
     echo "$blue-$white-$red <br>";
     echo '$blue-$white-$red';
 
-    // ----------------------------
+
+    /* --------------------------------- */
+    echo '<h2>Les constantes et les constantes magiques</h2>';
+    /* --------------------------------- */
+
+    // Une constante permet de sauvegarder une valeur sauf que celle-ci ne peut pas être modifiée
+    // Utile pour conserver les parametres de la base de donnée
+    // Par convention, une constante se déclare toujours en majuscule
+    define("CAPITAL", "Paris");
+    echo CAPITAL;
+    echo '<br>';
+
+    echo __FILE__ . '<br>'; // Affiche le chemin complet vers le fichier courant
+    echo __LINE__ . '<br>'; // Affiche le numéro de la ligne courante
+    echo __DIR__ . '<br>'; // Affiche le dossier dans lequel est le fichier courant
+
+
+    /* --------------------------------- */
     echo '<h2>Les operateurs arithmétiques</h2>';
-    // ----------------------------
+    /* --------------------------------- */
+
     $a = 10;
     $b = 2;
     echo $a + $b . '<br>';
@@ -115,9 +125,11 @@
     $a %= 2;
     echo $a . '<br>';
 
-    // ----------------------------
+    
+    /* --------------------------------- */
     echo '<h2>Les structures conditionnelles (if / elseif/ else</h2>';
-    // ----------------------------
+    /* --------------------------------- */
+
     $a = 23;
     $b = 5;
     $c = 2;
@@ -172,9 +184,7 @@
             echo 'Je ne connais pas cet animal !<br>';
     }
 
-
-
-    // Exercice : refaire le switch précédent avec des conditions if ... pour obtenir exactement le même résultat.
+    // Exercice : refaire le switch précédent avec des conditions if() pour obtenir exactement le même résultat.
     if ($couleur == 'bleu') {
         echo 'Vous aimez le bleu';
     } elseif ($couleur == 'rouge') {
@@ -185,10 +195,18 @@
         echo ' vous n \'aimez ni le bleu, ni le rouge, ni le vert';
     }
 
-    // ----------------------------
+
+    /* --------------------------------- */
     echo '<h2>Les tableaux</h2>';
-    // ----------------------------
-    // Un tableau de données ARRAY est déclaré comme une variable améliorée dans laquelle on stocke une multitude de valeurs. Ces valeurs peuvent être de n'importe quel type et possèdent un indice par défaut dont la numérotation commence à 0.
+    /* --------------------------------- */
+
+
+    /* --------------------------------- */
+    echo '<h3>Les tableaux à indice</h3>';
+    /* --------------------------------- */
+
+    // Un tableau de données ARRAY est déclaré comme une variable améliorée dans laquelle on stocke une multitude de valeurs. 
+    // Ces valeurs peuvent être de n'importe quel type et possèdent un indice par défaut dont la numérotation commence à 0.
 
     $liste = ['France', 'Italie', 'Espagne', 'Portugal'];
     echo $liste[3];
@@ -201,7 +219,7 @@
     echo '<br>';
 
     echo '<pre>';
-    print_r($liste); // Affiche le contenu du tableau
+    print_r($liste); // Affiche le contenu du tableau avec les valeurs
     echo '</pre>';
 
     // Autre façon de déclarer un tableau ARRAY :
@@ -211,30 +229,36 @@
     $liste2[] = 'Algerie'; // Les [] vides permettent d'ajouter une valeur à la fin du tableau
     var_dump($liste2);
 
-    // ----------------------------
+    /* --------------------------------- */
     echo '<h3>Les tableaux associatifs</h3>';
-    // ----------------------------
+    /* --------------------------------- */
+
     $user = [
         'prenom' => 'rachid',
         'nom' => 'Edjekouane',
         'age' => 40,
         'telephone' => '06 56 87 45 36'
     ];
+
     // Bonjour je m'appelle rachid edjekouane, j'ai 40 ans et mon numéro de téléphone est le  : 06 56 87 45 36
     echo 'Bonjour, je m\'appelle ' . $user['prenom'] . ' ' . $user['nom'] . ', j\'ai ' . $user['age'] . 'ans et mon numéro de téléphone est le : ' . $user['telephone'];
 
-    // ----------------------------
+
+    /* --------------------------------- */
     echo '<h2>Les structures itératives : les boucles</h2>';
-    // ----------------------------
+    /* --------------------------------- */
+
+    /* --------------------------------- */
+    echo '<h3>Boucle while()</h3>';
+    /* --------------------------------- */
 
     // Boucle while :
     $i = 0; //On initialise
     while ($i < 5) { // Tans que $i est inférieur à 5, on execute les accolades
         echo $i . '<br>';
-        $i++; // On incremente $i de 1 à chaque tour pour que la condition d'entrée devienne fausse à un moment
-
-
+        $i++; // On incremente $i de 1 à chaque tour pour que la condition d'entrée devienne fausse à un moment 
     }
+
     echo '<select>';
     $i = 1920;
     while ($i <= 2020) {
@@ -244,6 +268,7 @@
     echo '</select>';
     ?>
 
+    <!-- Exercice : à l'aide d'une boucle while, afficher un sélecteur avec les années depuis 1920 jusqu'à 2020. -->
     <select name="" id="">
         <?php
         $i = 1920;
@@ -255,14 +280,18 @@
         }
         ?>
     </select>
+
     <?php
+    /* --------------------------------- */
+    echo '<h3>Boucle for()</h3>';
+    /* --------------------------------- */
+
     // Boucle for() :
     for ($i = 0; $i < 4; $i++) {
         echo "<p>J'ai fait $i tours </p>";
     }
 
-    // Exercice : à l'aide d'une boucle while, afficher un sélecteur avec les années depuis 1920 jusqu'à 2020.
-    // Exercice : faire le même exercice avec la boucle for
+    // Exercice : à l'aide d'une boucle for(), afficher un sélecteur avec les années depuis 1920 jusqu'à 2020.
     ?>
     <select name="" id="">
         <?php
@@ -272,6 +301,7 @@
         }
         ?>
     </select>
+
     <select name="" id="">
         <?php
         for ($i = 1920; $i <= 2020; $i++) {
@@ -289,10 +319,11 @@
     for ($i = 0; $i < count($animals); $i++) {
         echo $animals[$i] . '<br>';
     }
-    // Boucle foreach()
-    // ---------------------
+
+
+    // ---------------------------------
     echo '<h3>la boucle foreach()</h3>';
-    // ---------------------
+    // ---------------------------------
     foreach ($animals as $animal) {
         echo $animal . '<br>';
     }
@@ -302,9 +333,14 @@
         echo $key . ' : ' . $prop . '<br>';
     }
 
-    // ---------------------
-    echo '<h2>Fonctions prédéfinies</h2>';
-    // ---------------------
+
+    /* --------------------------------- */
+    echo '<h3>Les fonctions</h3>';
+    /* --------------------------------- */
+
+    /* --------------------------------- */
+    echo '<h3>Les fonctions prédéfinies</h3>';
+    /* --------------------------------- */
 
     // substr()
     // Extrait un bout de la chaine de caractère
@@ -316,13 +352,13 @@
     echo $newdesc . '... <br>';
 
     // trim()
-    // Supprime les espaces au début et à la fin de la chaine de caractère 
     $message = '   edjek@gmail.com   ';
-    echo trim($message);
+    echo trim($message); // Supprime les espaces au début et à la fin de la chaine de caractère
 
-    // ---------------------
-    echo '<h2>Les fonctions utilisateurs</h2>';
-    // ---------------------
+
+    /* --------------------------------- */
+    echo '<h3>Les fonctions utilisateurs</h3>';
+    /* --------------------------------- */
 
     //  On déclare une fonction avec le mot clé function suivi du la fonction puis d'une paire de ()
     function separation()
@@ -356,15 +392,18 @@
     separation();
     echo factureEssence(15, 1.4);
 
-    function debbug($var){
+    function debbug($var)
+    {
         echo '<pre>';
         var_dump($var);
         echo '</pre>';
     }
 
-    // ---------------------
-    echo '<h2>Les super globales</h2>';
-    // ---------------------
+
+    /* --------------------------------- */
+    echo '<h2>Les superglobales</h2>';
+    /* --------------------------------- */
+
     // Les superglobales sont des variables de type ARRAY (tableau associatif) qui sont disponibles dans tous les contextes du script.
 
     // $_SERVER contient des informations liées au serveur
@@ -378,15 +417,27 @@
     separation();
     echo "Chemin du fichier executé : " . $_SERVER['SCRIPT_FILENAME'];
 
+
+    /* --------------------------------- */
+    echo '<h3>GET</h3>';
+    /* --------------------------------- */
+
     // $_GET :
     var_dump($_GET); // $_GET contient les informations envoyées en paramètre dans l'URL
+
+
+    /* --------------------------------- */
+    echo '<h3>POST</h3>';
+    /* --------------------------------- */
 
     // $_POST
     var_dump($_POST); // $_POST contient des informations envoyées en paramètre dans le corps de la requête HTTP
 
-    // ---------------------
+
+    /* --------------------------------- */
     echo '<h3>Les sessions</h3>';
-    // ---------------------
+    /* --------------------------------- */
+
     // Une session permet de conserver des informations à travers le site. Ces informations sont stockées dans un fichier temporaire sur le serveur. Ce fichier est relié à un internaute grâce à un identifiant unique : le session_id. Ce fichier peut contenir des informations sensibles : il ne faut donc pas le laisser à la portée de tout le monde. C'est pour cela qu'il est stocké dans un dossier temporaire du serveur, inaccessible aux internautes.
 
     // Pour accéder à la session, il faut commencer par la démarrer avec la fonction session_start().
@@ -397,7 +448,7 @@
     var_dump($_SESSION);
 
     // Ajouter des informations à la session
-    $_SESSION['pseudo'] ='tintin';
+    $_SESSION['pseudo'] = 'tintin';
 
     // Supprimer des informations de la session
     unset($_SESSION['pseudo']);
@@ -409,9 +460,10 @@
     session_unset();
 
 
-    // ---------------------
+    /* --------------------------------- */
     echo '<h2>Les inclusions de fichier</h2>';
-    // ---------------------
+    /* --------------------------------- */
+
     // En PHP, il est possible d'inclure des fichiers dans d'autres fichiers avec l'instruction require, include, include_once ou encore require_once (on utilise plutôt require_once en pratique).
 
     // require 'inclus.php'; // Le fichier est obligatoire pour le fonctionnement du site. Si le fichier n'est pas trouvé, require génère une erreur fatale et stoppe l'exécution du code.
@@ -421,11 +473,9 @@
     require './include.inc.php';
 
     // Le _once permet de vérifier si le fichier a déjà été inclus. Si c'est le cas, il ne le ré-inclut pas.
-    include_once './inclue.inc.php';
+    include_once './include.inc.php';
     require_once './include.inc.php';
     echo $doranco;
-
-    echo 'Je suis un message';
     ?>
 
 </body>
