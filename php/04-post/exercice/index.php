@@ -12,11 +12,11 @@ session_start();
 
 <body>
     <?php
-        if (isset($_SESSION['message'])) {
-            echo '<p class="message">'.$_SESSION['message']. '</p>';
-            unset($_SESSION['message']);
-        }
-        ?>
+    if (isset($_SESSION['message'])) {
+        echo '<p class="message">' . $_SESSION['message'] . '</p>';
+        unset($_SESSION['message']);
+    }
+    ?>
     <h1>accueil</h1>
 </body>
 

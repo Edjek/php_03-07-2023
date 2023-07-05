@@ -16,10 +16,10 @@ if (isset($_POST['name']) && isset($_POST['pswd']) && isset($_POST['color']) && 
         header('Location: ./index.php');
         exit();
     } else {
-        // header('Location: ./formulaire.php');
+        header('Location: ./formulaire.php');
         exit();
     }
 } else {
-    // header('Location: ./formulaire.php');
+    header('Location: ./formulaire.php');
     exit();
 }

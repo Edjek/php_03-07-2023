@@ -10,7 +10,7 @@
 <body>
 
     <div>
-        <h2><?= $_GET['model'];?></h2>
+        <h2><?= $_GET['model']; ?></h2>
         <p>couleur du model : <?= $_GET['color']; ?></p>
         <p>année de sortie : <?= $_GET['year']; ?></p>
     </div>

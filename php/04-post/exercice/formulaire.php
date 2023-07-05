@@ -18,17 +18,17 @@
                 <!-- Un champ de formulaire se compose d'un <label> et de son <input> -->
                 <!-- Pour lier les deux, l'attribut for="" et id="" doivent avoir la même valeur et être unique dans le formulaire -->
                 <label for="name">nom</label>
-                <input type="text" id="name" name="name"/>
+                <input type="text" id="name" name="name" />
             </div>
 
             <div>
                 <label for="pswd">mot de passe</label>
-                <input type="password" id="pswd" name="pswd"/>
+                <input type="password" id="pswd" name="pswd" />
             </div>
 
             <div>
                 <label for="color">couleur</label>
-                <input type="color" id="color" name="color"/>
+                <input type="color" id="color" name="color" />
             </div>
 
             <div>
@@ -59,7 +59,7 @@
             <div>
                 <span>Quels plats aimez-vous?</span>
                 <label for="burger">burger</label>
-                <input type="checkbox" id="burger" value="burger" name="food-burger"/>
+                <input type="checkbox" id="burger" value="burger" name="food-burger" />
                 <label for="pizza">pizza</label>
                 <input type="checkbox" id="pizza" value="pizza" name="food-pizza" />
             </div>
