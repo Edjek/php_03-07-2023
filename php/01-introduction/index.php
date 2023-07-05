@@ -356,26 +356,21 @@
     separation();
     echo factureEssence(15, 1.4);
 
-    // ---------------------
-    echo '<h2>Les super globales</h2>';
-    // ---------------------
-    // Les superglobales sont des variables de type ARRAY (tableau associatif) qui sont disponibles dans tous les contextes du script.
-
     function debbug($var){
         echo '<pre>';
         var_dump($var);
         echo '</pre>';
     }
 
+    // ---------------------
+    echo '<h2>Les super globales</h2>';
+    // ---------------------
+    // Les superglobales sont des variables de type ARRAY (tableau associatif) qui sont disponibles dans tous les contextes du script.
+
     // $_SERVER contient des informations liées au serveur
-    echo '</pre>';
     debbug($_SERVER);
     echo $_SERVER['MYSQL_HOME'];
 
-    // Afficher a chaque fois dans un paragraphe
-    // Adresse IP du server : 
-    // Nom du fichier executé : 
-    // Chemin du fichier exécuté : 
     separation();
     echo "Adresse IP du server : " . $_SERVER['SERVER_NAME'];
     separation();
@@ -384,7 +379,35 @@
     echo "Chemin du fichier executé : " . $_SERVER['SCRIPT_FILENAME'];
 
     // $_GET :
-    var_dump($_GET); // $_GET contient les informations envoyéees en paramètre dans l'URL
+    var_dump($_GET); // $_GET contient les informations envoyées en paramètre dans l'URL
+
+    // $_POST
+    var_dump($_POST); // $_POST contient des informations envoyées en paramètre dans le corps de la requête HTTP
+
+    // ---------------------
+    echo '<h3>Les sessions</h3>';
+    // ---------------------
+    // Une session permet de conserver des informations à travers le site. Ces informations sont stockées dans un fichier temporaire sur le serveur. Ce fichier est relié à un internaute grâce à un identifiant unique : le session_id. Ce fichier peut contenir des informations sensibles : il ne faut donc pas le laisser à la portée de tout le monde. C'est pour cela qu'il est stocké dans un dossier temporaire du serveur, inaccessible aux internautes.
+
+    // Pour accéder à la session, il faut commencer par la démarrer avec la fonction session_start().
+    // Doit être déclaré en premier avant même tout élément HTML
+    session_start();
+
+    // $_SESSION
+    var_dump($_SESSION);
+
+    // Ajouter des informations à la session
+    $_SESSION['pseudo'] ='tintin';
+
+    // Supprimer des informations de la session
+    unset($_SESSION['pseudo']);
+
+    // Supprime le fichier de session du serveur.
+    session_destroy();
+
+    // Vide le fichier de session sans le supprimer du serveur.
+    session_unset();
+
 
     // ---------------------
     echo '<h2>Les inclusions de fichier</h2>';

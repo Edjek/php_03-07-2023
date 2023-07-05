@@ -1,9 +1,5 @@
 <?php
 
-// echo '<pre>';
-// var_dump($_POST);
-// echo '</pre>';
-
 // La faille XSS, de son nom complet Cross-Site Scripting, est une faille qui permet d'injecter du code HTML et/ou Javascript dans des variables ou bases de données mal protégées.
 
 if( isset($_POST['name']) && isset($_POST['pswd'])){
