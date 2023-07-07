@@ -16,10 +16,12 @@ if (isset($_POST['name']) && isset($_POST['pswd']) && isset($_POST['color']) && 
         header('Location: ./index.php');
         exit();
     } else {
+        $_SESSION['message-error'] = 'Tous les champs ne sont pas remplis';
         header('Location: ./formulaire.php');
         exit();
     }
 } else {
+    $_SESSION['message-error'] = 'Il y\'a une erreur dans le formulaire';
     header('Location: ./formulaire.php');
     exit();
 }

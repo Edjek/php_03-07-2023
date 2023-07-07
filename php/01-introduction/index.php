@@ -476,6 +476,34 @@
     include_once './include.inc.php';
     require_once './include.inc.php';
     echo $doranco;
+
+
+    /* --------------------------------- */
+    echo '<h2>Les objets</h2>';
+    /* --------------------------------- */
+
+    // Un objet est un autre type de données. 
+    // Il représente un objet réel (par exemple : un produit, un personnage, un panier d'achat, etc.). 
+    // Un objet est déclaré à partir d'un plan de construction : la classe. La classe est un plan général de l'objet. 
+    // L'objet est instancié à partir de la classe. Chaque objet est différent, mais ils ont tous la même structure (les mêmes propriétés et les mêmes méthodes).
+
+    class Hero
+    {
+        public $pseudo = 'Tintin'; // Propriété "pseudo"
+        public $vie = 100; // Propriété "vie"
+
+        public function regenerer() // Méthode "regenerer"
+        {
+            $this->vie = 100;
+        }
+    }
+
+    $hero = new Hero();
+
+    echo $hero->pseudo;
+
+    // $hero2 est un objet de la classe "Hero". C'est une instance de la classe "Hero".
+    $hero2 = new Hero();
     ?>
 
 </body>
