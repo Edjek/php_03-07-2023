@@ -18,8 +18,10 @@ $mangas = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MANGA - Administration</title>
-    <!-- Bootstrap -->
+    <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -38,16 +40,16 @@ $mangas = $stmt->fetchAll();
                         <tr>
                             <th>id</th>
                             <th>Titre</th>
-                            <th>Modifier</th>
-                            <th>Supprimer</th>
+                            <th class="text-center">Modifier</th>
+                            <th class="text-center">Supprimer</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>id</th>
                             <th>Titre</th>
-                            <th>Modifier</th>
-                            <th>Supprimer</th>
+                            <th class="text-center">Modifier</th>
+                            <th class="text-center">Supprimer</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -58,8 +60,8 @@ $mangas = $stmt->fetchAll();
                                 <td><?= $manga['id']  ?></td>
                                 <td><?= $manga['title']  ?></td>
                                 <!-- Faire passer en parametre l'id du manga pour le lien modifier et supprimer -->
-                                <td><a href="./update-manga.php?id=<?= $manga['id']; ?>">modifier</a></td>
-                                <td><a href="./delete-manga.php?id=<?= $manga['id']; ?>">supprimer</a></td>
+                                <td class="text-center"><a href="./update-manga.php?id=<?= $manga['id']; ?>">modifier</a></td>
+                                <td class="text-center"><a href="./delete-manga.php?id=<?= $manga['id']; ?>"><i class="bi bi-trash3 text-danger"></i></a></td>
                             </tr>
                         <?php
                         }
