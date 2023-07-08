@@ -33,34 +33,32 @@ $manga = $res->fetch();
 
     <main>
         <section>
-            <form action="./traitement-update-manga.php" method="POST" class="w-75 mx-auto m-3 p-3 border">
-                <!-- 2 methodes pour faire passer l'id dans la super globale $_POST -->
-
-                <!-- OU on cache le champs -->
-                <input type="hidden" value="<?= $manga['id']; ?>" name="id">
-
-                <!-- OU on affiche le champ mais en le désactivant -->
-                <!-- <div class="mb-3">
-                    <label for="id">id</label>
-                    <input type="text" id="id" disabled value="<?= $manga['id']; ?>" name="id">
-                </div> -->
-
-                <div class="mb-3">
-                    <label for="title" class="form-label">Titre</label>
-                    <input type="text" class="form-control" id="title" value="<?= $manga['title']; ?>" name="title">
-                </div>
-
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" name="description"><?= $manga['description']; ?></textarea>
-                </div>
-
-                <div class="mb-3">
-                    <label for="price" class="form-label">Prix</label>
-                    <input type="number" step="any" class="form-control" id="price" name="price" value="<?= $manga['price']; ?>">
-                </div>
-                <input type="submit" value="modifier" class="btn btn-primary">
-            </form>
+            <div class="w-75 mx-auto m-5 p-3 border rounded">
+                <form action="./traitement-update-manga.php" method="POST">
+                    <!-- 2 methodes pour faire passer l'id dans la super globale $_POST -->
+                    <!-- OU on cache le champs -->
+                    <input type="hidden" value="<?= $manga['id']; ?>" name="id">
+                    <!-- OU on affiche le champ mais en le désactivant -->
+                    <!-- <div class="mb-3">
+                        <label for="id">id</label>
+                        <input type="text" id="id" disabled value="<?= $manga['id']; ?>" name="id">
+                    </div> -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Titre</label>
+                        <input type="text" class="form-control" id="title" value="<?= $manga['title']; ?>" name="title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" name="description"><?= $manga['description']; ?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Prix</label>
+                        <input type="number" step="any" class="form-control" id="price" name="price" value="<?= $manga['price']; ?>">
+                    </div>
+                    <input type="submit" value="Modifier" class="btn btn-primary">
+                    <input type="reset" value="Annuler" class="btn btn-secondary">
+                </form>
+            </div>
         </section>
     </main>
 

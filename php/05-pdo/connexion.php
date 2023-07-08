@@ -20,23 +20,31 @@ session_start()
 
     <main>
         <section>
-            <form action="./src/form/traitement-connexion.php" method="POST" class="w-75 mx-auto m-3 p-3 border">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Pseudo</label>
-                    <input type="text" id="name" class="form-control" name="name">
-                </div>
-                <div class="mb-3">
-                    <label for="pswd" class="form-label">Mot de passe</label>
-                    <input type="password" id="pswd" class="form-control" name="pswd">
-                </div>
-                <input type="submit" value="Connexion" class="btn btn-primary">
-            </form>
-            <?php 
-                if(isset($_SESSION['message-error'])){
-                    echo $_SESSION['message-error'];
+            <div class="w-75 mx-auto my-5 p-3 border rounded">
+                <form action="./src/form/traitement-connexion.php" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Pseudo</label>
+                        <input type="text" id="name" class="form-control" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pswd" class="form-label">Mot de passe</label>
+                        <input type="password" id="pswd" class="form-control" name="pswd">
+                    </div>
+                    <input type="submit" value="Connexion" class="btn btn-primary">
+                    <input type="reset" value="Annuler" class="btn btn-secondary">
+                </form>
+                <?php
+                if (isset($_SESSION['message-error'])) {
+                ?>
+                    <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+                        <?= $_SESSION['message-error']; ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php
                     unset($_SESSION['message-error']);
                 }
-            ?>
+                ?>
+            </div>
         </section>
     </main>
 

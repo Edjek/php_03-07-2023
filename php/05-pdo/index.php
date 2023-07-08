@@ -24,21 +24,24 @@ $mangas = $res->fetchAll();
     </header>
 
     <main>
-        <section>
-            <?php
-            foreach ($mangas as $manga) {
-            ?>
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $manga['title'];  ?></h5>
-                        <p class="card-text"><?= substr($manga['description'], 0, 150) . '...'; ?></p>
-                        <a href="./details.php?id=<?= $manga['id']; ?>" class="btn btn-primary">Plus détail</a>
+        <section class="container">
+
+            <div class="row justify-content-between gap-5 m-5">
+                <?php
+                foreach ($mangas as $manga) {
+                ?>
+                    <div class="card" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $manga['title'];  ?></h5>
+                            <p class="card-text"><?= substr($manga['description'], 0, 150) . '...'; ?></p>
+                            <a href="./details.php?id=<?= $manga['id']; ?>" class="btn btn-primary">Plus détail</a>
+                        </div>
                     </div>
-                </div>
-            <?php
-            }
-            ?>
+                <?php
+                }
+                ?>
+            </div>
         </section>
     </main>
 

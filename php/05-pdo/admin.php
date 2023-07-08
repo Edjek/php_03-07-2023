@@ -10,9 +10,6 @@ if ($_SESSION['admin'] != 1) {
 $stmt = $pdo->prepare('SELECT * FROM manga');
 $stmt->execute();
 $mangas = $stmt->fetchAll();
-
-// Connexion à la base de donnée
-// Récupération de tous les mangas
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,23 +31,42 @@ $mangas = $stmt->fetchAll();
     </header>
 
     <main>
-        <section>
-            <table class="table">
-                <?php
-                    foreach($mangas as $manga) {
-                ?>
-
-                <tr>
-                    <td><?= $manga['id']  ?></td>
-                    <td><?= $manga['title']  ?></td>
-                    <!-- Faire passer en parametre l'id du manga pour le lien modifier et supprimer -->
-                    <td><a href="./update-manga.php?id=<?= $manga['id']; ?>">modifier</a></td>
-                    <td><a href="./delete-manga.php?id=<?= $manga['id']; ?>">supprimer</a></td>
-                </tr>
-                <?php
-                    }
-                ?>
-            </table>
+        <section class="container">
+            <div class="border rounded m-5 p-3 ">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Titre</th>
+                            <th>Modifier</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>id</th>
+                            <th>Titre</th>
+                            <th>Modifier</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <?php
+                        foreach ($mangas as $manga) {
+                        ?>
+                            <tr>
+                                <td><?= $manga['id']  ?></td>
+                                <td><?= $manga['title']  ?></td>
+                                <!-- Faire passer en parametre l'id du manga pour le lien modifier et supprimer -->
+                                <td><a href="./update-manga.php?id=<?= $manga['id']; ?>">modifier</a></td>
+                                <td><a href="./delete-manga.php?id=<?= $manga['id']; ?>">supprimer</a></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 

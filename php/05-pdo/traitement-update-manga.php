@@ -1,8 +1,4 @@
-<!-- verifier le tableau $_POST s'il existe -->
-<!-- Verifier si les champs ne sont pas vides -->
-<!-- Modifiera en base de donne  -->
 <?php
-
 session_start();
 require_once './src/config/bdd.php';
 
@@ -19,17 +15,16 @@ if (isset($_POST)) {
         $id = $_POST['id'];
 
         $stmt = $pdo->prepare('UPDATE manga SET 
-        title=:title, 
+        title = :title, 
         description = :description,  
-        price =: price WHERE id= :id');
+        price = :price WHERE id= :id');
         $stmt->execute([
             'title' => $title,
             'description' => $description,
             'price' => $price,
-            'id'=> $id
+            'id' => $id
         ]);
         header('Location: ./admin.php');
-
     } else {
         header('Location: ./update-manga.php');
         exit();
